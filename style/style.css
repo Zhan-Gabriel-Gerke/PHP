@@ -87,7 +87,6 @@ nav a{
 
     transition: all 0.3s ease;
 }
-
 .menu li:hover>ul{
     top: 47px;
     left: 0;
@@ -97,4 +96,21 @@ main{
     justify-content: center;
     display: flex;
     top: 30%;
+}
+/**canvas**/
+canvas {
+    background-color: lavender;
+    /*width: 400px;*/
+    border: 1px solid gray;
+    z-index: 10;
+}
+canvas#housesmall{
+    top: 30%;
+}
+h2#majakeh2{
+    top: 10%;
+}
+.small-image {
+    width: 200px; /* Ширина */
+    height: auto; /* Сохранение пропорций */
 }
