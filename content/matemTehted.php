@@ -62,11 +62,16 @@ if(isset($_REQUEST['arv1'])){
         if($_REQUEST["arv2"]==$arv2){
             echo "oige";
             echo "<body style='background-color:green;'>";
+        }else if ($_REQUEST["arv2"]!=$arv2){
+            echo "vale";
+            echo "<body style='background-color:red;'>";
         }
+    }else if ($_REQUEST["arv1"]!=$arv1){
+        echo "vale";
+        echo "<body style='background-color:red;'>";
     }
 }
 ?>
-
 <br>
 <div id="code">
     <?php
