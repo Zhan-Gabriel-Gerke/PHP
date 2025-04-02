@@ -1,10 +1,14 @@
 <?php
+    function clearVarsExcept($url, $varname) {
+        return strtok(basename($_SERVER['REQUEST_URI']),"?")."?$varname=".$_REQUEST[$varname];
+    }
     echo "<h2>Matemaatilised tehted</h2>";
+    echo "<br>";
     echo "<a href='https://www.metshein.com/unit/php-matemaatilised-tehted-ulesanne-2/'>
     PHP matemaatilised tehted</a>";
-function clearVarsExcept($url, $varname) {
-    return strtok(basename($_SERVER['REQUEST_URI']),"?")."?$varname=".$_REQUEST[$varname];
-}
+    ?>
+<div id="moistatus">
+    <?php
 //moistatus
 echo "<h2>Загадали 2 числа до ...</h2>";
 $arv1=10;
@@ -16,6 +20,7 @@ echo "<li> Если певое и второе число сложить ".$arv1
 echo "<li> Если первое число разделить на второе ".$arv1/$arv2."</li>";
 echo "<li> Если взять остаток от деления первого числа на второе будет ".$arv1%$arv2."</li>";
 echo "</ul>";
+echo "<br>";
 //В подсказках перебрать все матем операции
 //пару операторов присваивания (omistamise operaatorid)
 $x = 15;
@@ -33,6 +38,7 @@ echo "<li> x /=y ".$x."</li>";
 echo "</ul>";
 echo "<h2>Vastuste kontroll</h2>";
 ?>
+</div>
 <!--
 echo "<label for='quantity'>Arv1</label>";
 echo "<input type='number' id='arv1' min='1' max='10' step='1'>";
@@ -41,7 +47,8 @@ echo "<label for='quantity'>Arv2</label>";
 echo "<input type='number' id='arb2' min='1' max='10' step='1'>";
 echo "<br>";
 echo "<button>kontroll</button>";-->
-    <form name="arvud" action="<?=clearVarsExcept(basename($_SERVER['REQUEST_URI']), "leht")?>" method="post">
+<br>
+    <form id="formArvud" name="arvud" action="<?=clearVarsExcept(basename($_SERVER['REQUEST_URI']), "leht")?>" method="post">
         <label for="arv1">Arv1</label>
         <input type="number" name="arv1" id="arv1" min="0" max="10" step="1">
         <br>
@@ -58,8 +65,14 @@ if(isset($_REQUEST['arv1'])){
         }
     }
 }
-highlight_file(matemTehted.php);
 ?>
+
+<br>
+<div id="code">
+    <?php
+    highlight_file('matemTehted.php');
+    ?>
+</div>
 <!--
 else if(isset($_REQUEST['arv1'])){
     if($_REQUEST["arv1"]!=$arv1){

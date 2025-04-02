@@ -92,7 +92,7 @@ nav a{
 }
 main{
     justify-content: center;
-    display: flex;
+    /**display: flex;**/
     top: 30%;
 }
 /**canvas**/
@@ -117,4 +117,14 @@ h2#majakeh2{
 button#joonis {
     height: 10px;
     width: 20px;
+}
+#moistatus{
+    text-align: left;
+    font-size: 16px;
+}
+#formArvud{
+    text-align: left;
+}
+#code{
+    text-align: left;
 }
