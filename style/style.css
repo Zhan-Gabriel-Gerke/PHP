@@ -128,3 +128,8 @@ button#joonis {
 #code{
     text-align: left;
 }
+#hooaeg{
+    width: 50%;
+    border: 1px solid red;
+    background-color: cornsilk;
+}

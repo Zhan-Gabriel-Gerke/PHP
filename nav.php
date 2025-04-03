@@ -10,6 +10,12 @@
             <a href="https://zhan-gabrielgerke24.thkit.ee/wp/eng">WP</a>
         </li>
         <li>
+            <a href="?leht=tekstFunktsioonid.php">TekstFunktsionid</a>
+        </li>
+        <li>
+            <a href="?leht=ajaFunktsioonid.php">AjaFunkts</a>
+        </li>
+        <li>
             <a href="#">JS Tood</a>
             <ul class="dropdown">
                 <li><a href="?leht=joonis.php">Canvas</a></li>

@@ -1,7 +1,14 @@
 <?php
-    function clearVarsExcept($url, $varname) {
-        return strtok(basename($_SERVER['REQUEST_URI']),"?")."?$varname=".$_REQUEST[$varname];
+//https://pastebin.com/Qdb6QDtJ
+function clearVarsExcept($url, $varname) {
+    // basename - makes the link relative, url must contain a filename that it returns basename('http://www.ee/index.php') > index.php
+    $url = basename($url);
+    if (str_starts_with($url, "?")) {
+        return "?$varname=".$_REQUEST[$varname];
     }
+    // strtok - returns first token after spliting on separator "?" strtoken('index.php?haha=lala', '?') > index.php
+    return strtok($url, "?")."?$varname=".$_REQUEST[$varname];
+}
     echo "<h2>Matemaatilised tehted</h2>";
     echo "<br>";
     echo "<a href='https://www.metshein.com/unit/php-matemaatilised-tehted-ulesanne-2/'>
@@ -48,7 +55,7 @@ echo "<input type='number' id='arb2' min='1' max='10' step='1'>";
 echo "<br>";
 echo "<button>kontroll</button>";-->
 <br>
-    <form id="formArvud" name="arvud" action="<?=clearVarsExcept(basename($_SERVER['REQUEST_URI']), "leht")?>" method="post">
+    <form id="formArvud" name="arvud" action="<?=clearVarsExcept($_SERVER['REQUEST_URI'], "leht")?>" method="post">
         <label for="arv1">Arv1</label>
         <input type="number" name="arv1" id="arv1" min="0" max="10" step="1">
         <br>
