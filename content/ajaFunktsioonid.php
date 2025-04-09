@@ -107,3 +107,8 @@ echo date('d.m.Y G:i:s', $s);
         " дней " . $different->h . ' часов '. $different->m . ' минут';
     ?>
 </div>
+<div id="code">
+    <?php
+    highlight_file('matemTehted.php');
+    ?>
+</div>
